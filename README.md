@@ -14,15 +14,13 @@ This is only a version that fixes the import problem and supports multibyte char
 ## Install
 
 ```bash
-go get github.com/samber/go-gpt-3-encoder
+go get github.com/GanymedeNil/go-gpt-3-encoder
 ```
 
 ## Usage
 
-Compatible with Node >= 12
-
 ```go
-import tokenizer "github.com/samber/go-gpt-3-encoder"
+import tokenizer "github.com/GanymedeNil/go-gpt-3-encoder"
 
 encoder, err := tokenizer.NewEncoder()
 if err != nil {
@@ -37,8 +35,8 @@ if err != nil {
 }
 
 fmt.Println("We can look at each token and what it represents:")
-for _, token := encoded {
-  fmt.Printf("%s -- %s\n", token, encoder.Decode([]string{token}))
+for _, token := range encoded {
+  fmt.Printf("%s -- %s\n", token, encoder.Decode([]int{token}))
 }
 
 decoded := encoder.Decode(encoded)
